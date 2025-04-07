@@ -1,29 +1,38 @@
 // ***********************************************************
-// This example support/e2e.js is processed and
-// loaded automatically before your test files.
+// Este archivo support/e2e.js se carga automáticamente 
+// antes de los archivos de prueba.
 //
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
+// Es un buen lugar para colocar configuraciones globales 
+// y comportamientos personalizados que modifiquen Cypress.
 //
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
+// Puedes cambiar la ubicación de este archivo o desactivar
+// su carga automática con la opción 'supportFile' en la configuración.
 //
-// You can read more here:
+// Más información aquí:
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
-import './commands'
+// ========== IMPORTACIÓN DE COMANDOS PERSONALIZADOS ==========
+
+// Importación de comandos personalizados desde el archivo commands.js
+import './commands';
+
+// Integración del plugin Allure para generación de reportes avanzados
 import '@shelex/cypress-allure-plugin';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+// También se podría usar la sintaxis CommonJS si se prefiere:
+// require('./commands');
+
+// ========== CONFIGURACIÓN GLOBAL ANTES DE CADA TEST ==========
 
 beforeEach(() => {
+    // Limpia todas las cookies antes de cada prueba
     cy.clearCookies();
+
+    // Limpia el localStorage para evitar datos persistentes entre pruebas
     cy.clearLocalStorage();
-    // Opcional: limpiar sessionStorage si es necesario
+
+    // Opcional: Limpia el sessionStorage si es necesario
     cy.window().then((win) => {
         win.sessionStorage.clear();
     });
