@@ -20,6 +20,8 @@ cypress/logs/
 allure-results/
 allure-report/
 mochawesome-report/
+report/mochawesome-report/
+*output.html
 
 # IDE settings
 .vscode/
