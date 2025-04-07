@@ -1,6 +1,9 @@
 # Node modules
 node_modules/
 
+# Carpeta de reporte
+report/
+
 # Build outputs
 dist/
 build/
@@ -30,3 +33,4 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
